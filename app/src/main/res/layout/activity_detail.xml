@@ -1,25 +1,49 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
+xmlns:app="http://schemas.android.com/apk/res-auto"
+xmlns:tools="http://schemas.android.com/tools"
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+tools:context=".activity.DetailActivity">
+
+<androidx.recyclerview.widget.RecyclerView
+    android:id="@+id/myRecyclerview"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".activity.DetailActivity">
+    android:layout_height="match_parent" />
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/myRecyclerview"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"/>
+<LinearLayout
+    android:layout_marginTop="650dp"
+    android:layout_width="match_parent"
+    android:layout_height="50dp">
 
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
+    <Button
+        android:id="@+id/bt_update"
+        android:layout_marginLeft="100dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/fab"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentBottom="true"
-        android:layout_margin="16dp"
-        android:src="@drawable/ic_add"
-        android:tint="@android:color/white"
-        app:fabSize="normal"/>
+        android:text="update">
+    </Button>
+    <Button
+        android:id="@+id/bt_delet"
+        android:layout_marginLeft="20dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="delete">
+    </Button>
+</LinearLayout>
+
+
+<com.google.android.material.floatingactionbutton.FloatingActionButton
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:id="@+id/fab"
+    android:layout_alignParentRight="true"
+    android:layout_alignParentBottom="true"
+    android:layout_margin="16dp"
+    android:src="@drawable/ic_add"
+    android:tint="@android:color/white"
+    app:fabSize="normal"/>
+
+
 
 </RelativeLayout>

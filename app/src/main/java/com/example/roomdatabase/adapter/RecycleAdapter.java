@@ -39,6 +39,33 @@ public class RecycleAdapter extends RecyclerView.Adapter<RecycleAdapter.MyViewHo
         myViewHolder.tvNim.setText(album.getNim());
         myViewHolder.tvKejuruan.setText(album.getKejuruan());
         myViewHolder.tvAlamat.setText(album.getAlamat());
+
+        myViewHolder.itemView.setOnLongClickListener(new View.OnLongClickListener() {
+            @Override
+            public boolean onLongClick(View v) {
+                charSequence[] menuPilihan = {"Edit", "Delete"}
+                AlertDialog.Builder dialog = new AlertDialog.Builder(v.getContext())
+                        .setTitle("Pilih Aksi")
+                        .setItems(menuPilihan, new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                                switch (which){
+                                    case 0:
+
+                                        onEditData(position, context);
+                                        break;
+
+                                    case 1:
+                                        onDeleteData(position);
+                                        break;
+                                }
+                            }
+                        });
+                dialog.create();
+                dialog.show();
+                return false;
+            }
+        });
     }
 
     @Override
